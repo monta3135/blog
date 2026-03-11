@@ -8,7 +8,8 @@ interface Props {
 
 const { post } = Astro.props;
 const { title, description, pubDate, updatedDate, categories } = post.data;
-const href = `${import.meta.env.BASE_URL}posts/${post.id}`;
+const baseUrl = import.meta.env.BASE_URL;
+const href = `${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}posts/${post.id}`;
 ---
 
 <article class="post-card">

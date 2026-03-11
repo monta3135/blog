@@ -1,0 +1,53 @@
+---
+title: "Hello, World!"
+description: "ブログを Astro + Bun で立ち上げました"
+pubDate: 2026-03-12
+categories: ["about", "markdown"]
+---
+
+このブログでは、Astroの標準機能に加えていくつかのプラグインを導入しており、リッチなMarkdown／MDX体験が可能です！:sparkles:
+
+## 1. 絵文字（Gemoji）のサポート
+
+`remark-gemoji` を入れているので、テキストで `:smile:` や `:rocket:` と書くだけで絵文字に変換されます！
+例： :smile: :rocket: :tada: :fire:
+
+## 2. 見出しの自動リンク（Autolink Headings）
+
+見出し（H2やH3など）には自動的にIDが付与され、ホバーするとリンクが現れて直接共有できるようになっています。この見出しにマウスを乗せてみてください。
+
+## 3. リッチなコードブロック（Expressive Code）
+
+`astro-expressive-code` により、シンタックスハイライトはもちろん、**ファイル名**の表示や**行のハイライト**も可能です。
+
+```ts title="src/example.ts" {3, 6}
+// `{3, 6}` のように指定すると特定の行をハイライトできます
+console.log("この行は普通の行です");
+console.log("この行はハイライトされています！");
+
+const sum = (a: number, b: number) => {
+  return a + b; // ここもハイライトされます
+};
+```
+
+## 4. 脚注（Footnotes）
+
+Astroの標準機能で、脚注を追加できます。
+文中にこのように書くことで、ページ下部に注釈を表示できます[^1]。
+
+[^1]: ここが脚注の内容です。設定ファイル `astro.config.ts` で、「↩ 戻る」などのラベルを日本語化しています！
+
+## 5. MDX によるコンポーネントの埋め込み
+
+ファイル拡張子が `.mdx` のため、Astroコンポーネントを直接インポートして記事内に配置できます。
+例えば、このブログの `FormattedDate.astro` コンポーネントを直接呼び出して日付を表示することも可能です。
+
+import FormattedDate from "../../components/FormattedDate.astro";
+
+**↓ Componentの直接配置例:** 
+<FormattedDate date={new Date()} />
+
+---
+
+このように、ただ文章を書くだけでなく、技術記事を書く上で必要な機能が最初からバッチリ揃っています！💪
+ご自身の自己紹介に合わせて、このファイルの中身を好きに書き換えてみてください！

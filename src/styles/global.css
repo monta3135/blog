@@ -252,6 +252,10 @@ h1, h2, h3, h4, h5, h6 {
   transition: opacity var(--transition);
 }
 
+.heading-link::after {
+  content: "#";
+}
+
 h1:hover .heading-link,
 h2:hover .heading-link,
 h3:hover .heading-link,
