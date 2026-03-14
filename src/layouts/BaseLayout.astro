@@ -41,9 +41,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:site_name" content={siteTitle} />
     <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:domain" content={canonicalURL.hostname} />
+    <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:site" content="@monta3135" />
+    <meta name="twitter:creator" content="@monta3135" />
 
     <!-- RSS -->
     <link
