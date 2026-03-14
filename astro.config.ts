@@ -5,6 +5,7 @@ import expressiveCode from "astro-expressive-code";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import remarkGemoji from "remark-gemoji";
+import rehypeBudoux from "./src/plugins/rehype-budoux";
 
 // GitHub Pages の URL に合わせて変更してください
 // 例: username が "monta" で リポジトリ名が "blog" の場合
@@ -47,6 +48,7 @@ export default defineConfig({
         },
         rehypePlugins: [
             rehypeSlug,
+            rehypeBudoux,
             [
                 rehypeAutolinkHeadings,
                 {

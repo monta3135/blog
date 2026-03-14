@@ -9,9 +9,15 @@ interface Props {
 
 const { post } = Astro.props;
 const { title, description, pubDate, updatedDate, categories } = post.data;
+
+// Generate the URL for the static OG image endpoint
+const ogImageURL = new URL(
+  `${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/'}og/${post.slug}.png`,
+  Astro.site
+).toString();
 ---
 
-<BaseLayout title={title} description={description} ogType="article">
+<BaseLayout title={title} description={description} ogType="article" ogImage={ogImageURL}>
   <article>
     <header class="post-header">
       <div class="post-meta">
