@@ -57,15 +57,6 @@ const normalizedOgImage = new URL(ogImage, Astro.site).toString();
     <meta property="og:image:height" content={ogImageHeight} />
     <meta property="og:image:alt" content={ogImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:domain" content={canonicalURL.hostname} />
-    <meta name="twitter:url" content={canonicalURL} />
-    <meta name="twitter:title" content={fullTitle} />
-    <meta name="twitter:description" content={description || "monta のブログ"} />
-    <meta name="twitter:image" content={normalizedOgImage} />
-    <meta name="twitter:image:src" content={normalizedOgImage} />
-    <meta name="twitter:image:alt" content={ogImageAlt} />
-    <meta name="twitter:site" content="@monta3135" />
-    <meta name="twitter:creator" content="@monta3135" />
 
     <!-- RSS -->
     <link
